@@ -1,0 +1,42 @@
+#canvas1 {
+    width: 800px;
+    height: 500px;
+    border: 1px solid black;
+    background: #59A869;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#maintitle{
+    margin-top: 20px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #27B5BF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -webkit-text-stroke:black;
+
+    
+}
+
+
+
+body {
+	background: linear-gradient(-45deg, #27B5BF, #5762B5, #B5A168, #AEBF57);
+	background-size: 400% 400%;
+	/* animation: gradient 30s ease infinite; */
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
