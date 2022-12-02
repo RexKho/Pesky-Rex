@@ -12,7 +12,7 @@ In addition, this project will include:
 -  An about modal
 
 # Wireframes
-
+<img width="1028" alt="Screen Shot 2022-12-01 at 7 47 33 PM" src="https://user-images.githubusercontent.com/98872331/205227255-e08560e5-8665-421a-b74d-d67cd3182a32.png">
 - The how to play and about this game Modal that will show on screen when a user hovers over it.
 - Nav links to include my linkedin and my github repo
 - Mute button to toggle sound on and off
@@ -23,6 +23,7 @@ THis project will be implemented with the following technologies:
 - The canvas API to render the game board
 - Webpack 
 - npm to manage project dependencies
+
 
 # Implementation Timeline
 - Friday and Weekend: Initial start up with the project. Start getting the layout of the webpage shown even if not pretty. 
