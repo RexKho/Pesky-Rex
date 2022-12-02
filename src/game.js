@@ -1,17 +1,17 @@
-// import { keyFor } from "core-js/fn/symbol";
 import MovingObject from "./moving_object";
+
 
 export default class Game {
     constructor(canvas) {
         this.width = canvas.width;
         this.height = canvas.height;
-        this.rex =new MovingObject({pos: [25,470], vel: [10,0], color: "red"});
+        this.rex = new MovingObject({pos: [25,470], vel: [10,0], color: "red"});
     }
    
     gamestart(ctx){
-      
+        this.bindKeys();
         this.animate(ctx);
-        // this.rex.draw(ctx);
+ 
         // maybe sounds will go here too;
         
     }
@@ -28,6 +28,14 @@ export default class Game {
         
         }
         requestAnimationFrame(animate);
+    }
+
+    bindKeys(){
+        let that = this;
+        key('w', function(){that.rex.direction([0,-1])});
+        key('s', function(){that.rex.direction([0,1])});
+        key('a', function(){that.rex.direction([-1,0])});
+        key('d', function(){that.rex.direction([1,0])});
     }
 
  

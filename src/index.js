@@ -4,14 +4,12 @@ import Game from "./game";
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 
-let keys = [];
-
 let start = new Game(canvas);
 start.gamestart(ctx);
 
 
 
-// setInterval(() => start.rex.move(ctx), 100);
 
+// setInterval(() => start.rex.move(ctx), 100);
 
 
