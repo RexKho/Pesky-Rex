@@ -1,4 +1,7 @@
 import MovingObject from "./moving_object";
+import Poop from "./poop";
+
+
 const background = new Image();
 background.src="src/images/background.png";
 
