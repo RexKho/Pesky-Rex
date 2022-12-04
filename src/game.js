@@ -1,5 +1,6 @@
 import MovingObject from "./moving_object";
 import Poop from "./poop";
+import Rex from "./rex";
 
 
 const background = new Image();
@@ -11,12 +12,13 @@ export default class Game {
         this.width = canvas.width;
         this.height = canvas.height;
        
-        this.rex = new MovingObject({pos: [25,470], vel: [0,0], color: "red"});
+        this.rex = new Rex(canvas);
     }
-   
-    gamestart(ctx){
     
-        this.rex.draw(ctx);
+    gamestart(ctx){
+        console.log(this.rex);
+    
+        // this.rex.draw(ctx);
         ctx.drawImage(background, 0, 0, 800, 500);
         this.animate(ctx);
         // maybe sounds will go here too;
@@ -30,7 +32,7 @@ export default class Game {
         ctx.drawImage(background, 0, 0, 800, 500);
         this.rex.draw(ctx);
         that.bindKeys(ctx);
-        console.log('hi');
+        // console.log(this.rex);
         
        
         // that.rex.draw(ctx);
