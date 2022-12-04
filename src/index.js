@@ -4,8 +4,8 @@ import Game from "./game";
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 
-let start = new Game(canvas);
-start.gamestart(ctx);
+let game = new Game(canvas);
+game.gamestart(ctx);
 
 
 

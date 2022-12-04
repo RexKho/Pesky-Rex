@@ -51,7 +51,7 @@ table {
     width: 800px;
     height: 500px;
     border: 1px solid black;
-    background: #59A869;
+    /* background: #59A869; */
     position: absolute;
     top: 50%;
     left: 50%;
