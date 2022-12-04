@@ -27,13 +27,14 @@ export default class Game {
         ctx.drawImage(background, 0, 0, 800, 500);
         this.rex.draw(ctx);
         that.bindKeys(ctx);
+        console.log('hi');
         
        
         // that.rex.draw(ctx);
         setTimeout(()=> {
             requestAnimationFrame(this.animate.bind(this, ctx));
 
-        }, 2006);
+        }, 2007);
        
     }
 

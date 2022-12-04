@@ -23,6 +23,7 @@ export default class MovingObject {
         this.move(ctx);
         this.vel[0] = 0;
         this.vel[1] = 0;
+        // console.log(this.vel);
     }
 
     move(ctx){
