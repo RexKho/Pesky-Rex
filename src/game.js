@@ -14,6 +14,8 @@ export default class Game {
         this.height = canvas.height;
        
         this.rex = new Rex(canvas);
+
+        this.poopedLocations = [];
     }
     
     gamestart(ctx){
@@ -45,7 +47,7 @@ export default class Game {
     poopLocations(ctx){
         let conn = ctx;
         let that = this;
-        this.rex.pooped.forEach( function(ele) {
+        this.poopedLocations.forEach( function(ele) {
             that.rex.drawPreviousPoop(conn, ele);
         })
         // if (that.rex.pooped.length > 0) {
@@ -76,7 +78,7 @@ export default class Game {
         setTimeout(()=> {
             requestAnimationFrame(this.animate.bind(this, ctx));
 
-        },144);
+        },2000);
        
     }
 
@@ -88,7 +90,14 @@ export default class Game {
         key('s', function(){that.rex.direction([0,1], conn)});
         key('a', function(){that.rex.direction([-1,0], conn)});
         key('d', function(){that.rex.direction([1,0], conn)});
-        key('space', function(){that.rex.drawPoop(conn)});
+        key('space', function(){
+            that.rex.drawPoop(conn);
+            let newarr = new Array();
+            newarr.push(that.rex.pos[0]);
+            newarr.push(that.rex.pos[1]);
+            that.poopedLocations.push(newarr);
+            console.log(that.poopedLocations);
+        });
     }
 
 

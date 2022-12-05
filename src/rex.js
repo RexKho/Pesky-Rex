@@ -14,7 +14,7 @@ export default class Rex {
         this.moving = false;
 
         this.ctx = ctx;
-        this.pooped = new Set([]);
+        // this.pooped = new Set([]);
 
         // let dogImg = {
         //     x: this.pos[0],
@@ -41,9 +41,9 @@ export default class Rex {
     drawPoop(ctx){
         let that = this;
         let poop = new Poop(ctx, that.pos);
-        this.pooped.add(that.pos);
+        // this.pooped.add(that.pos);
         // console.log(this.pooped);
-        console.log(this.poopLocations)
+        
         poop.draw(ctx, that.width, that.height, that.pos[0], that.pos[1], that.width, that.height);
     }
 
