@@ -19,15 +19,15 @@ export default class Game {
     gamestart(ctx){
         
         let that = this;
-        window.addEventListener("keydown", function(e){
-            that.keys[e.key] = true;
-            console.log(e.key);
-        })
+        // window.addEventListener("keydown", function(e){
+        //     that.keys[e.key] = true;
+        //     console.log(e.key);
+        // })
 
-        window.addEventListener("keyup", function(e){
-            that.keys[e.key] = false;
-            // console.log(that.keys);
-        })
+        // window.addEventListener("keyup", function(e){
+        //     that.keys[e.key] = false;
+        //     // console.log(that.keys);
+        // })
        
         // this.rex.draw(ctx);
         ctx.drawImage(background, 0, 0, 800, 500);
@@ -45,15 +45,18 @@ export default class Game {
     poopLocations(ctx){
         let conn = ctx;
         let that = this;
-        if (that.rex.pooped.length > 0) {
-            for(let i =0; i < that.rex.pooped.length; i++){
-                const poopSprite = new Image();
-                poopSprite.src = "src/images/poop.png";
-                conn.drawImage(poopSprite, 0, 0, that.width, that.height, 
-                    that.pos[0], that.pos[1], that.width, that.height);
+        this.rex.pooped.forEach( function(ele) {
+            that.rex.drawPreviousPoop(conn, ele);
+        })
+        // if (that.rex.pooped.length > 0) {
+        //     for(let i =0; i < that.rex.pooped.length; i++){
+        //         const poopSprite = new Image();
+        //         poopSprite.src = "src/images/poop.png";
+        //         conn.drawImage(poopSprite, 0, 0, that.width, that.height, 
+        //             that.pos[0], that.pos[1], that.width, that.height);
                     
-            }
-        }
+        //     }
+        // }
     }
 
     animate(ctx){
@@ -80,7 +83,7 @@ export default class Game {
     bindKeys(ctx){
         let conn = ctx;
         let that = this;
-        key('w', function(){console.log('hi')});
+        // key('w', function(){console.log(that.rex.poopLocations)});
         key('w', function(){that.rex.direction([0,-1], conn)});
         key('s', function(){that.rex.direction([0,1], conn)});
         key('a', function(){that.rex.direction([-1,0], conn)});

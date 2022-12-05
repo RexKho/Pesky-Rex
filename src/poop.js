@@ -5,14 +5,20 @@ export default class Poop {
     this.pos = pos;
   }
 
-  draw(ctx){
+  draw(ctx, width, height, pos0, pos1, width2, height2){
     // console.log(this);
-    ctx.beginPath();
-    ctx.rect(this.pos[0], this.pos[1], 20, 10);
-    ctx.fillStyle = "brown";
-    ctx.stroke();
+    const poopSprite = new Image();
+    poopSprite.src = "src/images/poop.png";
+    ctx.drawImage(poopSprite, 0, 0, width, height, 
+        pos0, pos1, width2, height2);
+      
+
 }
 
-
+//code below was in rex class draw poop
+        // const poopSprite = new Image();
+        // poopSprite.src = "src/images/poop.png";
+        // ctx.drawImage(poopSprite, 0, 0, that.width, that.height, 
+        //     that.pos[0], that.pos[1], that.width, that.height);
 
 }
