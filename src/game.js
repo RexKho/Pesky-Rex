@@ -1,5 +1,5 @@
 import MovingObject from "./moving_object";
-import Poop from "./poop";
+
 import Rex from "./rex";
 
 
@@ -42,12 +42,28 @@ export default class Game {
     //     }
     // }
 
+    poopLocations(ctx){
+        let conn = ctx;
+        let that = this;
+        if (that.rex.pooped.length > 0) {
+            for(let i =0; i < that.rex.pooped.length; i++){
+                const poopSprite = new Image();
+                poopSprite.src = "src/images/poop.png";
+                conn.drawImage(poopSprite, 0, 0, that.width, that.height, 
+                    that.pos[0], that.pos[1], that.width, that.height);
+                    
+            }
+        }
+    }
+
     animate(ctx){
         
         let that = this;
         ctx.clearRect(0,0,800,600);
         ctx.drawImage(background, 0, 0, 800, 500);
+        this.poopLocations(ctx);
         this.rex.draw(ctx);
+        
         that.bindKeys(ctx);
         // this.movePLayer();
         // console.log(this.rex);
@@ -65,10 +81,11 @@ export default class Game {
         let conn = ctx;
         let that = this;
         key('w', function(){console.log('hi')});
-        key('w', function(){that.rex.direction([0,-.1], conn)});
-        key('s', function(){that.rex.direction([0,.1], conn)});
-        key('a', function(){that.rex.direction([-.1,0], conn)});
-        key('d', function(){that.rex.direction([.1,0], conn)});
+        key('w', function(){that.rex.direction([0,-1], conn)});
+        key('s', function(){that.rex.direction([0,1], conn)});
+        key('a', function(){that.rex.direction([-1,0], conn)});
+        key('d', function(){that.rex.direction([1,0], conn)});
+        key('space', function(){that.rex.drawPoop(conn)});
     }
 
 

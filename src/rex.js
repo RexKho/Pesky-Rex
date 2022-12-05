@@ -1,3 +1,5 @@
+import Poop from "./poop";
+
 export default class Rex {
     constructor(ctx){
         this.pos = [25,470];
@@ -12,6 +14,7 @@ export default class Rex {
         this.moving = false;
 
         this.ctx = ctx;
+        this.pooped = [];
 
         // let dogImg = {
         //     x: this.pos[0],
@@ -35,6 +38,18 @@ export default class Rex {
     //     ctx.drawImage(dogSprite, sX, sY, sW, sH, dX, dY, dW, dH);
     // }
 
+    drawPoop(ctx){
+        let that = this;
+        let poop = new Poop(ctx, that.pos);
+        this.pooped.push([that.pos]);
+        const poopSprite = new Image();
+        poopSprite.src = "src/images/poop.png";
+        ctx.drawImage(poopSprite, 0, 0, that.width, that.height, 
+            that.pos[0], that.pos[1], that.width, that.height);
+        
+
+    }
+
     draw(ctx){
         // console.log(this);
         // ctx.beginPath();
@@ -43,10 +58,12 @@ export default class Rex {
         // ctx.fillStyle = this.color;
         // ctx.stroke();
         let that = this;
+        
         const dogSprite = new Image();
         dogSprite.src = "src/images/dogwalking.png";
         ctx.drawImage(dogSprite, 0, 0, that.width, that.height, 
             that.pos[0], that.pos[1], that.width, that.height);
+            console.log(that.pooped[1])
            
     }
 
