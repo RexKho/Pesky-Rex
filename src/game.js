@@ -24,6 +24,55 @@ export default class Game {
         console.log(this.pooped);
         // console.log(this.poopLocations)
     }
+
+    gamechecker(){
+        let count = [false, false, false, false, false, false];
+        this.pooped.forEach(ele => {
+            if (ele.x >= 114 && ele.x <= 261){
+                if (ele.y >= 225 && ele.y <= 415){
+                    count[0] = true;
+                }
+            }
+            if (ele.x >= 266 && ele.x <= 604){
+                if (ele.y >= 225 && ele.y <= 415){
+                    count[1] = true;
+                }
+            }
+            if (ele.x >= 607 && ele.x <= 798){
+                if (ele.y >= 225 && ele.y <= 415){
+                    count[2] = true;
+                }
+            }
+            if (ele.x >= 113 && ele.x <= 365){
+                if (ele.y >= 3 && ele.y <= 154){
+                    count[3] = true;
+                }
+            }
+            if (ele.x >= 368 && ele.x <= 634){
+                if (ele.y >= 0 && ele.y <= 154){
+                    count[4] = true;
+                }
+            }
+            if (ele.x >= 636 && ele.x <= 799){
+                if (ele.y >= 0 && ele.y <= 154){
+                    count[5] = true;
+                }
+            }
+        })
+
+        console.log(count);
+
+        if (count.every(ele => ele === true)){
+            // alert("you won the game!")
+
+        }
+        
+    }
+
+
+    won(){
+
+    }
     
     animate(){
         this.ctx.clearRect(0,0,800,500);
@@ -32,6 +81,7 @@ export default class Game {
             // };
             this.ctx.drawImage(this.background, 0, 0, 800, 500);
             this.rex.draw();
+            this.gamechecker();
             for (let poop of this.pooped) {
                 poop.draw()
             }
@@ -41,6 +91,19 @@ export default class Game {
                 // },144);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
         // import MovingObject from "./moving_object";
         
         // import Rex from "./rex";

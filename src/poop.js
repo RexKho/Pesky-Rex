@@ -11,7 +11,7 @@ export default class Poop {
   
   draw(){
     // console.log(this.pos)
-    this.ctx.drawImage(this.poopSprite, this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(this.poopSprite, this.x-28, this.y, this.width, this.height);
   }
   
 }
