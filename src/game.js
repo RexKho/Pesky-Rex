@@ -5,27 +5,52 @@ export default class Game {
     constructor(canvas, ctx) {
         this.background = new Image();
         this.background.src="src/images/background.png";
-        this.keys = [];
+        // this.keys = [];
         this.canvas = canvas;
         this.ctx = ctx;
         this.width = canvas.width;
         this.height = canvas.height;
         this.rex = new Rex(canvas, ctx);
         this.pooped = new Set([]);
+        this.winYet = false;
+    }
+
+    reset(canvas,ctx){
+        this.rex = new Rex(canvas, ctx);
+        this.pooped = new Set([]);
+        this.winYet = false;
     }
     
     gamestart(){
+        this.reset(this.canvas, this.ctx);
         let startDiv = document.getElementById("start");
         let gameCanvas = document.getElementById("canvas1");
-        let gameOver = document.getElementById("game-over");
+        let endLost = document.getElementById("endLost");
+        let endWon = document.getElementById("endWon");
         startDiv.style.display = "none";
         gameCanvas.style.display = "block";
-        gameOver.style.display = "none";
+        endLost.style.display = "none";
+        endWon.style.display = "none";
         this.animate();
     }
 
-    startGame() {
-     
+    endgame() {
+        
+        let startDiv = document.getElementById("start");
+        let gameCanvas = document.getElementById("canvas1");
+        let endLost = document.getElementById("endLost");
+        let endWon = document.getElementById("endWon");
+        startDiv.style.display = "none";
+        gameCanvas.style.display = "none";
+
+        if(this.winYet === false){
+            endLost.style.display = "block";
+            endWon.style.display = "none";
+        } else {
+            endWon.style.display = "block";
+            endLost.style.display = "none";
+        }
+        this.winYet = false;
     }
 
 
@@ -73,18 +98,14 @@ export default class Game {
         })
 
         
-
+        let that = this;
         if (count.every(ele => ele === true)){
             // alert("you won the game!")
-            console.log('WInner')
+            that.winYet = true;
 
         }
         
-    }
-
-
-    won(){
-
+        
     }
     
     animate(){
@@ -98,6 +119,10 @@ export default class Game {
             for (let poop of this.pooped) {
                 poop.draw()
             }
+            if(this.winYet === true){
+                this.endgame();
+            }
+            console.log(this.winYet);
             
             // setTimeout(()=> {
                 requestAnimationFrame(this.animate.bind(this));

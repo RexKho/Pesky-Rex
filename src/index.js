@@ -12,6 +12,17 @@ startDiv.addEventListener('click', function(){
     
 })
 
+const endDiv = document.getElementById("endLost");
+endDiv.addEventListener('click', function(){
+    game.gamestart();
+    
+})
+const endDiv2 = document.getElementById("endWon");
+endDiv2.addEventListener('click', function(){
+    game.gamestart();
+    
+})
+
 function keyDown(e) {
     e.preventDefault();
     if (e.key === 'w') {
