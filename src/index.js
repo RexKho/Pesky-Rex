@@ -5,7 +5,12 @@ const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 
 let game = new Game(canvas, ctx);
-game.gamestart();
+
+const startDiv = document.getElementById("start");
+startDiv.addEventListener('click', function(){
+    game.gamestart();
+    
+})
 
 function keyDown(e) {
     e.preventDefault();
@@ -25,6 +30,7 @@ function keyDown(e) {
         game.addPoop();
     }
 }
+
 
 document.addEventListener("keydown", keyDown);
 

@@ -15,13 +15,25 @@ export default class Game {
     }
     
     gamestart(){
+        let startDiv = document.getElementById("start");
+        let gameCanvas = document.getElementById("canvas1");
+        let gameOver = document.getElementById("game-over");
+        startDiv.style.display = "none";
+        gameCanvas.style.display = "block";
+        gameOver.style.display = "none";
         this.animate();
     }
+
+    startGame() {
+     
+    }
+
+
     
     addPoop(){
         let poop = new Poop(this.ctx, this.rex.pos);
         this.pooped.add(poop);
-        console.log(this.pooped);
+        // console.log(this.pooped);
         // console.log(this.poopLocations)
     }
 
@@ -60,10 +72,11 @@ export default class Game {
             }
         })
 
-        console.log(count);
+        
 
         if (count.every(ele => ele === true)){
             // alert("you won the game!")
+            console.log('WInner')
 
         }
         

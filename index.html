@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="vendor/keymaster.js" type="application/javascript"></script>
+   
     <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" type="text/css" href="./src/styles/game.css">
     
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="./dist/main.js" defer></script>
@@ -27,8 +29,16 @@
     </div> -->
 
 
-    <canvas id="canvas1" height="500" width="800"></canvas>
-      <!-- <script src="index.js"></script> -->
+    <canvas id="canvas1" height="500" width="800" style="display:none"></canvas>
+
+    <div id="start" style="display:block">
+      <a>Ready to Poop?</a>
+    </div>
+
+    <div id="game-over" style="display:none">
+      <h1>YOU GOT CAUGHT HAAHHAHA</h1>
+      <a href="#" onclick="startGame">Poop again?</a>
+    </div>
 
   </body>
 
