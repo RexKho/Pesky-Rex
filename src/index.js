@@ -11,9 +11,6 @@ window.addEventListener('click', clickOutside);
 
 function openModal(){
     modal.style.display = 'flex';
-  
-
-
 }
 
 function closeModal(){
@@ -26,6 +23,27 @@ function clickOutside(e){
     }
 }
 
+let fart = new Audio();
+fart.volume = 1;
+fart.src = "src/audio/fart.mp3"
+
+let mute = false;
+let song = new Audio();
+song.src = "src/audio/song.mp3";
+song.loop = true;
+song.volume = .5;
+
+function toggleMute(){
+    if(!mute){
+        mute = true;
+        song.volume = 0;
+        fart.volume = 0;
+    } else if (this.mute){
+        mute = false;
+        song.volume = .5;
+        fart.volume = 1;
+    }
+}
 
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
@@ -34,6 +52,7 @@ let game = new Game(canvas, ctx);
 
 const startDiv = document.getElementById("start");
 startDiv.addEventListener('click', function(){
+    song.play();
     game.gamestart();
     
 })
@@ -48,10 +67,6 @@ endDiv2.addEventListener('click', function(){
     game.gamestart();
     
 })
-
-let fart = new Audio();
-fart.volume = .5;
-fart.src = "src/audio/fart.mp3"
 
 function keyDown(e) {
     e.preventDefault();
@@ -79,19 +94,3 @@ function keyDown(e) {
 
 document.addEventListener("keydown", keyDown);
 
-
-// import Game from "./game";
-// // import MovingObject from "./moving_object";
-
-// const canvas = document.getElementById("canvas1");
-// const ctx = canvas.getContext('2d');
-
-
-
-// let game = new Game(canvas);
-// game.gamestart(ctx);
-
-
-
-
-// setInterval(() => start.rex.move(ctx), 100);

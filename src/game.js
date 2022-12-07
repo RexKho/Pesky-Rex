@@ -19,6 +19,7 @@ export default class Game {
         this.drone3 = new Drone(canvas, ctx, [300,55]);
         this.drone4 = new Drone(canvas, ctx, [711,320]);
         this.paused = false;
+    
     }
 
     togglePause(){
@@ -28,6 +29,8 @@ export default class Game {
             this.paused = false;
         }
     }
+
+    
 
     dist(obj1, obj2) {
         return Math.sqrt((obj1.pos[0] - obj2.pos[0])**2 + (obj1.pos[1] - obj2.pos[1])**2);
