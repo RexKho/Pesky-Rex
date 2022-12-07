@@ -1,5 +1,5 @@
 # Pesky-Rex
-In this game you will play as Rex, the neighborhood pesky dog. You find enjoyment in excrementing in as much lawns as possible without getting caught. Use your W A S D key to move Rex around the map. Press the space bar to start pooping once you find a good spot. Press b to bark. Run away from the neighbors who are out looking for you. 
+In this game you will play as Rex, the neighborhood pesky dog. You find enjoyment in excrementing in as much lawns as possible without getting caught. Use your W A S D key to move Rex around the map. Press the space bar to start pooping once you find a good spot. Press b to bark. Run away from the drones who are out looking for you. 
 
 # Functionality & MVPS
 With this Pesky Rex simulator, users will be able to:
