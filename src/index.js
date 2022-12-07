@@ -33,12 +33,15 @@ song.src = "src/audio/song.mp3";
 song.loop = true;
 song.volume = .5;
 
+let MuteButton = document.getElementById('MuteButton');
+MuteButton.addEventListener('click', toggleMute);
+
 function toggleMute(){
     if(!mute){
         mute = true;
         song.volume = 0;
         fart.volume = 0;
-    } else if (this.mute){
+    } else if (mute){
         mute = false;
         song.volume = .5;
         fart.volume = 1;
