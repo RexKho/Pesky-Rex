@@ -1,3 +1,4 @@
+import Drone from "./drone";
 import Poop from "./poop";
 import Rex from "./rex";
 
@@ -13,11 +14,42 @@ export default class Game {
         this.rex = new Rex(canvas, ctx);
         this.pooped = new Set([]);
         this.winYet = false;
+        this.drone1 = new Drone(canvas, ctx, [735,85]);
+        this.drone2 = new Drone(canvas, ctx, [450,270]);
+        this.drone3 = new Drone(canvas, ctx, [300,55]);
+        this.drone4 = new Drone(canvas, ctx, [711,320]);
+        this.paused = false;
+    }
+
+    togglePause(){
+        if(!this.paused){
+            this.paused = true;
+        } else if (this.paused){
+            this.paused = false;
+        }
+    }
+
+    dist(obj1, obj2) {
+        return Math.sqrt((obj1.pos[0] - obj2.pos[0])**2 + (obj1.pos[1] - obj2.pos[1])**2);
+    }
+
+    collided(obj1, obj2){
+        if(((obj1.width + obj2.width)/2) > this.dist(obj1, obj2)){
+            return true;
+        }
+        if(((obj1.height + obj2.height)/2) > this.dist(obj1, obj2)){
+            return true;
+        }
+        return false;
     }
 
     reset(canvas,ctx){
         this.rex = new Rex(canvas, ctx);
         this.pooped = new Set([]);
+        this.drone1 = new Drone(canvas, ctx, [735,85]);
+        this.drone2 = new Drone(canvas, ctx, [450,270]);
+        this.drone3 = new Drone(canvas, ctx, [300,55]);
+        this.drone4 = new Drone(canvas, ctx, [711,320]);
         this.winYet = false;
     }
     
@@ -107,8 +139,36 @@ export default class Game {
         
         
     }
+
+    movedrones(){
+        this.drone1.draw();
+        this.drone1.move();
+        this.drone2.draw();
+        this.drone2.move();
+        this.drone3.draw();
+        this.drone3.move();
+        this.drone4.draw();
+        this.drone4.move();
+    }
+
+    rexCollideWithDrones(){
+        if (this.collided(this.rex, this.drone1)){
+            return true;
+        }
+        if (this.collided(this.rex, this.drone2)){
+            return true;
+        }
+        if (this.collided(this.rex, this.drone3)){
+            return true;
+        }
+        if (this.collided(this.rex, this.drone4)){
+            return true;
+        }
+        return false;
+    }
     
     animate(){
+        if (!this.paused){
         this.ctx.clearRect(0,0,800,500);
         // this.background.onload = () => {
             //     this.ctx.drawImage(this.background, 0, 0, 800, 500)
@@ -116,17 +176,19 @@ export default class Game {
             this.ctx.drawImage(this.background, 0, 0, 800, 500);
             this.rex.draw();
             this.gamechecker();
+            this.movedrones();
             for (let poop of this.pooped) {
                 poop.draw()
             }
             if(this.winYet === true){
                 this.endgame();
             }
-            console.log(this.winYet);
-            
-            // setTimeout(()=> {
-                requestAnimationFrame(this.animate.bind(this));
-                // },144);
+            // console.log(thix.rexCollideWithDrones)
+            if(this.rexCollideWithDrones() === true){
+                this.endgame();
+            }
+        }
+        requestAnimationFrame(this.animate.bind(this));
     }
 }
 

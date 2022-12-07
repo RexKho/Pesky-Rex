@@ -40,6 +40,9 @@ function keyDown(e) {
     if (e.keyCode === 32) {
         game.addPoop();
     }
+    if (e.key === 'p') {
+        game.togglePause();
+    }
 }
 
 

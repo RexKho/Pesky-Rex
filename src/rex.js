@@ -24,7 +24,20 @@ export default class Rex {
         move(arr){
                         // console.log('testing')
             this.pos[0] += arr[0];
+            if (this.pos[0] < 0){
+                this.pos[0] = 0;
+            }
+            if (this.pos[0] > 780){
+                this.pos[0] = 760;
+            }
+
             this.pos[1] += arr[1];
+            if (this.pos[1] < 0){
+                this.pos[1] = 0;
+            }
+            if (this.pos[1] > 480){
+                this.pos[1] = 460;
+            }
                         // this.draw();
         }
 }
