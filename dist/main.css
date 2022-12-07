@@ -50,7 +50,7 @@ table {
 #canvas1 {
     width: 800px;
     height: 500px;
-    border: 1px solid black;
+    border: 5px solid #27B5BF;
     /* background: #59A869; */
     position: absolute;
     top: 60%;
@@ -115,11 +115,15 @@ body {
     z-index: 1;
     left: 0;
     top: 0;
+    
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0.5);
     display: none;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center; /*centers items on the cross-axis (y by default)*/
+
 }
 
 .modal-content{
@@ -128,6 +132,7 @@ body {
     padding: 20px;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
     animation-name: modalopen;
+   
     animation-duration: 1s;
 
 }
@@ -175,6 +180,7 @@ body {
     height:200px;
     width:250px;
     text-align: center;
+    
 }
 
 #start a, #endLost a, #endWon a {
@@ -208,6 +214,38 @@ body {
 }
 
 #start a:hover, #end a:hover { background-color: #ffffff; color: #1bafdb; }
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; 
+ 
+}
+
+#footerh4{
+    display: flex;
+    justify-content: center;
+}
+
+#p{
+    display: flex;
+    justify-content: center;
+   
+    font-size: 70px;
+    font-family: Snell Roundhand, cursive;
+    height: 4rem; 
+}
+
+/* #footer, h4{ */
+    /* display: flex; */
+    /* justify-content: center; */
+/* } */
+
+/* #footer, h1{ */
+    /* display: flex; */
+    /* justify-content: center; */
+/* } */
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
