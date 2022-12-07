@@ -49,6 +49,10 @@ endDiv2.addEventListener('click', function(){
     
 })
 
+let fart = new Audio();
+fart.volume = .5;
+fart.src = "src/audio/fart.mp3"
+
 function keyDown(e) {
     e.preventDefault();
     if (e.key === 'w') {
@@ -65,6 +69,7 @@ function keyDown(e) {
     }
     if (e.keyCode === 32) {
         game.addPoop();
+        fart.play();
     }
     if (e.key === 'p') {
         game.togglePause();
