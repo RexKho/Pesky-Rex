@@ -1,6 +1,29 @@
 import Game from "./game";
 // import MovingObject from "./moving_object";
 
+let modal = document.getElementById('simpleModal');
+let modalBtn = document.getElementById('modalBtn');
+let closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', clickOutside);
+
+function openModal(){
+    modal.style.display = 'block';
+}
+
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+function clickOutside(e){
+    if (e.target === modal){
+    modal.style.display = 'none';
+    }
+}
+
+
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 

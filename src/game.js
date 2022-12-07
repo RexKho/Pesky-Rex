@@ -55,6 +55,7 @@ export default class Game {
     
     gamestart(){
         this.reset(this.canvas, this.ctx);
+        this.paused = false;
         let startDiv = document.getElementById("start");
         let gameCanvas = document.getElementById("canvas1");
         let endLost = document.getElementById("endLost");
@@ -82,6 +83,7 @@ export default class Game {
             endWon.style.display = "block";
             endLost.style.display = "none";
         }
+        this.paused = true;
         this.winYet = false;
     }
 
