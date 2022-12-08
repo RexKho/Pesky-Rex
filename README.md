@@ -12,7 +12,7 @@ With this Pesky Rex simulator, users will be able to:
 ![Screen Shot 2022-12-08 at 10 34 25 AM](https://user-images.githubusercontent.com/98872331/206538440-1ccbc785-0835-482f-aa40-3d33a54a83e6.png)
 
 # Technologies, Libraries, APIS
-This project utulizes the below:
+This project utilizes the below:
 - Canvas API to render the game board
 - Webpack 
 - NPM 
