@@ -1,5 +1,4 @@
 import Game from "./game";
-// import MovingObject from "./moving_object";
 
 let modal = document.getElementById('simpleModal');
 let modalBtn = document.getElementById('modalBtn');

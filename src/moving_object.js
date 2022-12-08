@@ -3,13 +3,10 @@ export default class MovingObject {
         this.pos = hash.pos;
         this.vel = hash.vel;
         this.color = hash.color;
-        
-
     }
 
 
     draw(ctx){
-        // console.log(this);
         ctx.beginPath();
         ctx.rect(this.pos[0], this.pos[1], 20, 10);
         
@@ -23,11 +20,9 @@ export default class MovingObject {
         this.move(ctx);
         this.vel[0] = 0;
         this.vel[1] = 0;
-        // console.log(this.vel);
     }
 
     move(ctx){
-        
         this.pos[0] += this.vel[0];
         this.pos[1] += this.vel[1];
         this.draw(ctx);

@@ -6,7 +6,6 @@ export default class Game {
     constructor(canvas, ctx) {
         this.background = new Image();
         this.background.src="src/images/background.png";
-        // this.keys = [];
         this.canvas = canvas;
         this.ctx = ctx;
         this.width = canvas.width;
@@ -95,8 +94,6 @@ export default class Game {
     addPoop(){
         let poop = new Poop(this.ctx, this.rex.pos);
         this.pooped.add(poop);
-        // console.log(this.pooped);
-        // console.log(this.poopLocations)
     }
 
     gamechecker(){
@@ -137,9 +134,7 @@ export default class Game {
         
         let that = this;
         if (count.every(ele => ele === true)){
-            // alert("you won the game!")
             that.winYet = true;
-
         }
         
         
@@ -174,21 +169,20 @@ export default class Game {
     
     animate(){
         if (!this.paused){
-        this.ctx.clearRect(0,0,800,500);
-        // this.background.onload = () => {
-            //     this.ctx.drawImage(this.background, 0, 0, 800, 500)
-            // };
+            this.ctx.clearRect(0,0,800,500);
             this.ctx.drawImage(this.background, 0, 0, 800, 500);
             this.rex.draw();
             this.gamechecker();
             this.movedrones();
+
             for (let poop of this.pooped) {
                 poop.draw()
             }
+
             if(this.winYet === true){
                 this.endgame();
             }
-            // console.log(thix.rexCollideWithDrones)
+          
             if(this.rexCollideWithDrones() === true){
                 this.endgame();
             }
