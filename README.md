@@ -7,6 +7,7 @@ With this Pesky Rex simulator, users will be able to:
 - Start, pause, and play again!
 - Use the move and poop action
 - Avoid the buzzing drones
+- Drones will get faster each run
 - Click the instructions and about Modal for more instructions
 
 ![Screen Shot 2022-12-08 at 10 34 25 AM](https://user-images.githubusercontent.com/98872331/206538440-1ccbc785-0835-482f-aa40-3d33a54a83e6.png)
