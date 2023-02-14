@@ -20,7 +20,7 @@ This project utilizes the below:
 
 ## Significant Code
 
-### Hit Box Calculation 
+#### Hit Box Calculation 
 ```javascript
  dist(obj1, obj2) {
         return Math.sqrt((obj1.pos[0] - obj2.pos[0])**2 + (obj1.pos[1] - obj2.pos[1])**2);
