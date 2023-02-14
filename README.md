@@ -10,7 +10,7 @@ With this Pesky Rex simulator, users will be able to:
 - Drones will get faster each run
 - Click the instructions and about Modal for more instructions
 
-![Screen Shot 2022-12-08 at 10 34 25 AM](https://user-images.githubusercontent.com/98872331/206538440-1ccbc785-0835-482f-aa40-3d33a54a83e6.png)
+![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/98872331/218621715-813e5acc-8cfe-49dd-a247-0e6b2e0fa53a.gif)
 
 # Technologies, Libraries, APIS
 This project utilizes the below:
