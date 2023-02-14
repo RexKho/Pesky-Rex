@@ -18,4 +18,21 @@ This project utilizes the below:
 - Webpack 
 - NPM 
 
+## Significant Code
 
+### Hit Box Calculation 
+```javascript
+ dist(obj1, obj2) {
+        return Math.sqrt((obj1.pos[0] - obj2.pos[0])**2 + (obj1.pos[1] - obj2.pos[1])**2);
+    }
+
+    collided(obj1, obj2){
+        if(((obj1.width + obj2.width)/2) > this.dist(obj1, obj2)){
+            return true;
+        }
+        if(((obj1.height + obj2.height)/2) > this.dist(obj1, obj2)){
+            return true;
+        }
+        return false;
+    }
+```
