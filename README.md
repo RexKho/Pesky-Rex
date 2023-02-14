@@ -18,8 +18,4 @@ This project utilizes the below:
 - Webpack 
 - NPM 
 
-# Future plans
-- Add a bark feature to bark at things
-- Add levels to the game
-- Add a sprint feature
-- Add obstacles to hide behind or run around
+
