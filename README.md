@@ -1,6 +1,6 @@
 <img width="640" alt="Screen Shot 2022-12-08 at 10 26 49 AM" src="https://user-images.githubusercontent.com/98872331/206536305-e61a7498-967a-4da4-b31b-6eff2c8c8608.png">
 
-In this game you will play as Rex, the neighborhood pesky dog. You find enjoyment in excrementing in as much lawns as possible without getting caught. Your arch nemeis Spot is the HOA president and has decided to deply drones to catch you. Use your W A S D key to move Rex around the map. Press the space bar to start pooping once you find a good spot.  Run away from the drones who are out looking for you. 
+In this [game](https://rexkho.github.io/Pesky-Rex/) you will play as Rex, the neighborhood pesky dog. You find enjoyment in excrementing in as much lawns as possible without getting caught. Your arch nemeis Spot is the HOA president and has decided to deply drones to catch you. Use your W A S D key to move Rex around the map. Press the space bar to start pooping once you find a good spot.  Run away from the drones who are out looking for you. 
 
 # Functionality & MVPS
 With this Pesky Rex simulator, users will be able to:
